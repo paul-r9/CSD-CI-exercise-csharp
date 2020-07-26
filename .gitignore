@@ -14,3 +14,7 @@ build/
 bin/
 obj/
 .vs
+
+#JetBrains / ReSharper / Rider
+*.[Rr]ider
+*.DotSettings.user
