@@ -18,4 +18,10 @@
   
 - ISBN.tests
   - xUnit tests for the ISBNFinder class
+  
+- Add code coverage metrics to CI build
+  - See the following links
+  - (https://docs.microsoft.com/en-us/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops)
+  - (https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops)
+
  
