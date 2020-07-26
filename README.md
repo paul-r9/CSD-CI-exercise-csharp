@@ -1,6 +1,6 @@
 # r9-isbn-ci-dotnet
 
-[![Build Status](https://dev.azure.com/paul0287/CSD-CI-exercise-csharp/_apis/build/status/paul-r9.CSD-CI-exercise-csharp?branchName=master)](https://dev.azure.com/paul0287/CSD-CI-exercise-csharp/_build/latest?definitionId=6&branchName=master)
+[![Build Status](https://dev.azure.com/paul0287/CSD-CI-exercise-csharp/_apis/build/status/paul-r9.CSD-CI-exercise-csharp?branchName=trunk)](https://dev.azure.com/paul0287/CSD-CI-exercise-csharp/_build/latest?definitionId=6&branchName=trunk)
 
 [Azure DevOps Project page](https://dev.azure.com/paul0287/CSD-CI-exercise-csharp)
 
