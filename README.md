@@ -6,7 +6,9 @@
 
 
 
-- Some tests against ISBN10 in place to verify azure devops build
+- Some tests against ISBN10 are in place to verify Azure DevOps build
+
+**Project Files**
 
 - BookInfoProvider
   - Defines the Provider interface
@@ -19,9 +21,13 @@
 - ISBN.tests
   - xUnit tests for the ISBNFinder class
   
-- Add code coverage metrics to CI build
+ **TODO** 
+  
+ - [ ] Track your team's tasks here
+  
+- [ ] Add code coverage metrics to CI build
   - See the following links
-  - (https://docs.microsoft.com/en-us/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops)
-  - (https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops)
+  - [Review Code Coverage Results](https://docs.microsoft.com/en-us/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops)
+  - [Publish Code Coverage Results](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-code-coverage-results?view=azure-devops)
 
  
