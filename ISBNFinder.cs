@@ -36,14 +36,15 @@ namespace ISBN
 
       public BookInfo lookup13(string ISBN)
       {
-         
-         if (!ISBN13Validator.Validate(ISBN))
+         string strippedIsbn = StripValidWhitespace(ISBN);
+
+         if (!ISBN13Validator.Validate(strippedIsbn))
          {
             BookInfo badISBN = new BookInfo("ISBN is invalid");
             return badISBN;
          }
 
-         BookInfo bookInfo = isbnService.retrieve(ISBN);
+         BookInfo bookInfo = isbnService.retrieve(strippedIsbn);
 
          if (null == bookInfo)
          {
@@ -51,6 +52,11 @@ namespace ISBN
          }
 
          return bookInfo;
+      }
+
+      private string StripValidWhitespace(string isbn)
+      {
+         return isbn.Replace(" ", "").Replace("-", "");
       }
    }
 }
