@@ -54,5 +54,17 @@ namespace ISBN {
             // Fix it and commit to trunk and observe the CI build starts and passes
             Assert.True(true, "Remove this test or change 'false' to true'");
         }
+
+        [Fact]
+        public void ISBN_BookNotFound()
+        {
+            string ISBN = "1234567890";
+
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.lookup(ISBN);
+
+            Assert.Equal("Title not found", actual.Title);
+
+        }
     }
 }
