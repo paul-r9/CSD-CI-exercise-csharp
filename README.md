@@ -23,7 +23,26 @@
   
  **TODO** 
   
- - [ ] Track your team's tasks here
+  - [ ] Fix the failing test
+  - [ ] Improve the ISBN10Tests
+  - [ ] Create an ISBN13Test file
+  
+  Validation of ISBN length
+  
+  Validation of checksum
+ 
+ Gopi Team - ISBN10
+ - Doug
+ - Angela
+ - Angie
+ - Mickey
+ 
+ Russell Team - ISBN13
+ - Steve
+ - Gwen
+ - Phong
+ - Lane
+ 
   
 - [ ] Add code coverage metrics to CI build
   - See the following links
