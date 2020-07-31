@@ -88,5 +88,4 @@ namespace ISBN {
             Assert.Equal("Invalid Checksum", actual.Title);
         }
     }
-
 }
