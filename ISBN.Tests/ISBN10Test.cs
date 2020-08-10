@@ -87,5 +87,11 @@ namespace ISBN {
 
             Assert.Equal("Invalid Checksum", actual.Title);
         }
+        
+        [Fact]
+        public void Failing_Test() {
+            Assert.False(true, "Force failure to confirm Azure connection");
+        }
+
     }
 }
