@@ -27,23 +27,7 @@
   - [ ] Improve the ISBN10Tests
   - [ ] Create an ISBN13Test file
   
-  Validation of ISBN length
-  
-  Validation of checksum
- 
- Gopi Team - ISBN10
- - Doug
- - Angela
- - Angie
- - Mickey
- 
- Russell Team - ISBN13
- - Steve
- - Gwen
- - Phong
- - Lane
- 
-  
+   
 - [ ] Add code coverage metrics to CI build
   - See the following links
   - [Review Code Coverage Results](https://docs.microsoft.com/en-us/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops)
