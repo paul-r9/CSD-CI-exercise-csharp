@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
-
+        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
