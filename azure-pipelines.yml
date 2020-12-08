@@ -37,5 +37,5 @@ steps:
              !**\obj\**
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    minimumExpectedTests: 1
+    minimumExpectedTests: '1'
     failOnMinTestsNotRun: true
