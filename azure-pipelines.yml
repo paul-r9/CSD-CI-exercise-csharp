@@ -39,4 +39,4 @@ steps:
     configuration: '$(buildConfiguration)'
     minimumExpectedTests: 1
     failOnMinTestsNotRun: true
-    codeCoverageEnabled: True
+    #codeCoverageEnabled: True
