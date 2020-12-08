@@ -41,8 +41,8 @@ steps:
     failOnMinTestsNotRun: true
     #codeCoverageEnabled: True
     
-- task: PublishTestResults@2
-  inputs:
-      testResultsFormat: 'xUnit'
-      testResultsFiles: '**/TEST-*.xml'
+# - task: PublishTestResults@2
+#  inputs:
+#      testResultsFormat: 'xUnit'
+#      testResultsFiles: '**/TEST-*.xml'
 
