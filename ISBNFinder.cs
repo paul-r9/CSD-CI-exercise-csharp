@@ -1,4 +1,5 @@
 using BookInfoProvider;
+using System;
 using System.Text.RegularExpressions;
 
 namespace ISBN {
@@ -32,12 +33,11 @@ namespace ISBN {
                 return badISBN;
             }
 
-            //if(!validChecksum(ISBN))
-            //{
-            //    BookInfo badISBN = new BookInfo("ISBN has wrong checksum");
-            //    return badISBN;
-            //}
-
+            if (!validChecksum(ISBN))
+            {
+                BookInfo badISBN = new BookInfo("ISBN has wrong checksum");
+                return badISBN;
+            }
 
             BookInfo bookInfo = isbnService.retrieve(ISBN);
             
@@ -46,6 +46,25 @@ namespace ISBN {
             }
             
             return bookInfo;
+        }
+
+        public bool validChecksum(string ISBN)
+        {
+            int accumulator = 0;
+            for(int i = 0; i < ISBN.Length - 1; i++)
+            {
+                int pos = int.Parse(ISBN[i].ToString());
+                accumulator += pos * (i + 1);
+            }
+            accumulator %= 11;
+            if(accumulator == 10)
+            {
+                return ISBN[ISBN.Length - 1] == 'X';
+            }
+            else
+            {
+                return ISBN[ISBN.Length - 1] == accumulator.ToString().ToCharArray()[0];
+            }
         }
 
     }

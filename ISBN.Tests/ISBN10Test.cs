@@ -59,16 +59,27 @@ namespace ISBN {
             Assert.Equal("ISBN has an X out of place", actual.Title);
         }
 
-        //[Fact]
-        //public void ISBN_WrongChecksum()
-        //{
-        //    string wrongISBN = "0478084523";
+        [Fact]
+        public void ISBN_Invalid_Characters()
+        {
+            String unknownISBN = "ABCDEFGHIJK";
 
-        //    ISBNFinder sut = new ISBNFinder();
-        //    BookInfo actual = sut.lookup(wrongISBN);
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.lookup(unknownISBN);
 
-        //    Assert.Equal("ISBN has wrong checksum", actual.Title);
-        //}
+            Assert.Equal("ISBN using invalid characters", actual.Title);
+        }
+
+        [Fact]
+        public void ISBN_WrongChecksum()
+        {
+            string wrongISBN = "0478084523";
+
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.lookup(wrongISBN);
+
+            Assert.Equal("ISBN has wrong checksum", actual.Title);
+        }
 
         //[Fact]
         //public void Failing_Test_To_Demo_CI_Automation() {
