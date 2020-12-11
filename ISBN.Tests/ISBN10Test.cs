@@ -48,6 +48,28 @@ namespace ISBN {
             Assert.Equal(expected.ToString(), actual.ToString());
         }
 
+        [Fact]
+        public void ISBN_X_Out_OF_Place()
+        {
+            String unknownISBN = "12345678X9";
+
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.lookup(unknownISBN);
+
+            Assert.Equal("ISBN has an X out of place", actual.Title);
+        }
+
+        //[Fact]
+        //public void ISBN_WrongChecksum()
+        //{
+        //    string wrongISBN = "0478084523";
+
+        //    ISBNFinder sut = new ISBNFinder();
+        //    BookInfo actual = sut.lookup(wrongISBN);
+
+        //    Assert.Equal("ISBN has wrong checksum", actual.Title);
+        //}
+
         //[Fact]
         //public void Failing_Test_To_Demo_CI_Automation() {
         //    // This test fails
