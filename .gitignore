@@ -6,6 +6,7 @@ out/
 build/
 .gradle/
 
+mono_crash*
 
 #Mac
 .DS_Store
