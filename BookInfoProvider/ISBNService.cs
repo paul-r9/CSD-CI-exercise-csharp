@@ -29,7 +29,10 @@ namespace BookInfoProvider {
 
         public static ISBNService Instance {
             get {
-                lock (padlock);
+                lock (padlock)
+                {
+                }
+
                 {
                     if (instance == null) {
                         instance = new ISBNService();
