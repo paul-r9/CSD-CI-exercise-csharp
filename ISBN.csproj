@@ -1,21 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     </PropertyGroup>
 
     <ItemGroup>
       <Compile Remove="ISBN.Tests\**" />
+      <Compile Remove="BookInfoProvider\obj\Debug\netcoreapp2.1\**" />
+      <Compile Remove="BookInfoProvider\obj\Debug\netcoreapp3.1\BookInfoProvider.Program.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="ISBN.Tests\**" />
+      <EmbeddedResource Remove="BookInfoProvider\obj\Debug\netcoreapp2.1\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="ISBN.Tests\**" />
+      <None Remove="BookInfoProvider\obj\Debug\netcoreapp2.1\**" />
     </ItemGroup>
 
     <ItemGroup>
