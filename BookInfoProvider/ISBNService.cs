@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.VisualBasic.CompilerServices;
 
 /*
  * This is an in-memory example of a BookInfoProvider.
@@ -10,8 +11,8 @@ using System.Collections.Generic;
 
 namespace BookInfoProvider {
     public sealed class ISBNService : IBookInfoProvider {
-        private static ISBNService instance = null;
-        private static readonly object padlock = new object();
+        private static ISBNService _instance = null;
+        private static readonly object Padlock = new object();
         private IDictionary<string, BookInfo> booksByIsbn10;
         private IDictionary<string, BookInfo> booksByIsbn13;
 
@@ -19,7 +20,7 @@ namespace BookInfoProvider {
             booksByIsbn10 = new Dictionary<String, BookInfo>();
             booksByIsbn13 = new Dictionary<String, BookInfo>();
             
-            foreach (String[] book in books) {
+            foreach (String[] book in _books) {
                 BookInfo bi = new BookInfo(book[0], book[1], book[2], book[3]);
                 booksByIsbn10[bi.Isbn10] = bi;
                 booksByIsbn13[bi.Isbn13] = bi;
@@ -29,23 +30,24 @@ namespace BookInfoProvider {
 
         public static ISBNService Instance {
             get {
-                lock (padlock)
+                lock (Padlock)
                 {
                 }
 
                 {
-                    if (instance == null) {
-                        instance = new ISBNService();
+                    if (_instance == null) {
+                        _instance = new ISBNService();
                     }
 
-                    return instance;
+                    return _instance;
                 }
             }
         }
 
-        string[][] books = new string[][] {
+        readonly string[][] _books = new string[][] {
             new string[] {"97 Things Every Programmer Should Know", "Kevlin Henney",   "0596809484", "9780596809485"},
             new string[] {"Accelerate", "Forsgren, Humble, Kim",                       "1942788339", "9781942788331"},
+            new string[] {"BDD In Action", "Smart",                                    "161729165X", "9781617291654"},
             new string[] {"Pattern-Oriented SW Architecture Vol 1", "Frank Buschmann", "0471958697", "9780471958697"},
             new string[] {"Pattern-Oriented SW Architecture Vol 2", "Douglas Schmidt", "0471606952", "9780471606956"},
             new string[] {"Pattern-Oriented SW Architecture Vol 3", "Michael Kircher", "0478084525", "9780470845257"},
