@@ -24,5 +24,33 @@ namespace ISBN.Tests
             //Assert
             Assert.Equal(testBook.Title , result.Title);
         }
+
+        [Fact]
+        public void ValidateCheckSum_Fails()
+        {
+            //Arrange
+            string testIsbn13 = "123456789012";
+            ISBNFinder sut = new ISBNFinder(_bookInfoProvider.Object);
+
+            //Act
+            bool result = sut.ValidateCheckSum13(testIsbn13);
+
+            //Assert
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void ValidateCheckSum_Passes()
+        {
+            //Arrange
+            string testIsbn13 = "9780131495050";
+            ISBNFinder sut = new ISBNFinder(_bookInfoProvider.Object);
+
+            //Act
+            bool result = sut.ValidateCheckSum13(testIsbn13);
+
+            //Assert
+            Assert.True(result);
+        }
     }
 }
