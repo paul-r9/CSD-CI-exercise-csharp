@@ -12,17 +12,16 @@ namespace ISBN {
         }
         
         public BookInfo lookup(string ISBN) {
-            
-            if (ISBN.Length != 10) {
-                BookInfo badISBN = new BookInfo("ISBN must be 10 characters in length");
-                return badISBN;
-            }
+
+            ISBN = ISBN.Replace("-","").Replace(" ", "");
+
+            if (ISBN.Length != 10 && ISBN.Length != 13)
+                return new BookInfo("ISBN must be 10 or 13 characters in length");
 
             BookInfo bookInfo = isbnService.retrieve(ISBN);
             
-            if (null == bookInfo) {
+            if (null == bookInfo)
                 return new BookInfo("Title not found");
-            }
             
             return bookInfo;
         }
