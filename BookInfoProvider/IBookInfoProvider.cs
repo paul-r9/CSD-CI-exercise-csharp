@@ -3,6 +3,6 @@ using BookInfoProvider;
 namespace BookInfoProvider {
 
     public interface IBookInfoProvider {
-        BookInfo retrieve(string ISBN);
+        BookInfo Retrieve(string isbn);
     }
 }

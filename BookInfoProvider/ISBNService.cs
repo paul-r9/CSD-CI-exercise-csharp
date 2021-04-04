@@ -62,7 +62,7 @@ namespace BookInfoProvider {
             new string[] {"xUnit Test Patterns", "Gerard Meszaros",                    "0131495054", "9780131495050"},
         };
         
-        public BookInfo retrieve(string isbn) {
+        public BookInfo Retrieve(string isbn) {
             if (10 == isbn.Length) {
                 if (booksByIsbn10.ContainsKey(isbn)) {
                     return booksByIsbn10[isbn];

@@ -7,18 +7,18 @@ namespace ISBN {
         public ISBNFinder() : this(ISBNService.Instance) {
         }
 
-        public ISBNFinder(IBookInfoProvider bookInfoProvider) {
+        protected ISBNFinder(IBookInfoProvider bookInfoProvider) {
             isbnService = bookInfoProvider;
         }
         
-        public BookInfo lookup(string ISBN) {
+        public BookInfo Lookup(string isbn) {
             
-            if (ISBN.Length != 10) {
-                BookInfo badISBN = new BookInfo("ISBN must be 10 characters in length");
-                return badISBN;
+            if (isbn.Length != 10) {
+                BookInfo badIsbn = new BookInfo("ISBN must be 10 characters in length");
+                return badIsbn;
             }
 
-            BookInfo bookInfo = isbnService.retrieve(ISBN);
+            BookInfo bookInfo = isbnService.Retrieve(isbn);
             
             if (null == bookInfo) {
                 return new BookInfo("Title not found");

@@ -1,31 +1,27 @@
 namespace BookInfoProvider {
     public class BookInfo {
-        private string title;
-        private string author;
-        private string ISBN10;
-        private string ISBN13;
+        private readonly string _title;
+        private readonly string _author;
+        private readonly string _isbn10;
+        private readonly string _isbn13;
 
-        public string Title => title;
+        public string Title => _title;
 
-        public string Author => author;
+        public string Author => _author;
 
-        public string Isbn10 => ISBN10;
+        public string Isbn10 => _isbn10;
 
-        public string Isbn13 => ISBN13;
+        public string Isbn13 => _isbn13;
 
-        public BookInfo(string title, string author, string ISBN10, string ISBN13) {
-            this.title = title;
-            this.author = author;
-            this.ISBN10 = ISBN10;
-            this.ISBN13 = ISBN13;
-        }
-        
-        public BookInfo(string title) :
-            this(title, null, null, null) {
+        public BookInfo(string title, string author = null, string isbn10 = null, string isbn13 = null) {
+            this._title = title;
+            this._author = author;
+            this._isbn10 = isbn10;
+            this._isbn13 = isbn13;
         }
 
         public override string ToString() {
-            return Title + ", " + Author + " - " + ISBN10 + ", " + ISBN13; 
+            return Title + ", " + Author + " - " + _isbn10 + ", " + _isbn13; 
         }
     }
 }

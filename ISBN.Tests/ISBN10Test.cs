@@ -14,7 +14,7 @@ namespace ISBN
 
             //Act
             ISBNFinder sut = new ISBNFinder();
-            BookInfo actual = sut.lookup(shortISBN);
+            BookInfo actual = sut.Lookup(shortISBN);
 
             //Assert
             Assert.Equal("ISBN must be 10 characters in length", actual.Title);
@@ -26,7 +26,7 @@ namespace ISBN
             string longISBN = "123456789ABCEDF";
 
             ISBNFinder sut = new ISBNFinder();
-            BookInfo actual = sut.lookup(longISBN);
+            BookInfo actual = sut.Lookup(longISBN);
 
             Assert.Equal("ISBN must be 10 characters in length", actual.Title);
         }
@@ -37,7 +37,7 @@ namespace ISBN
             String unknownISBN = "0553562614";
 
             ISBNFinder sut = new ISBNFinder();
-            BookInfo actual = sut.lookup(unknownISBN);
+            BookInfo actual = sut.Lookup(unknownISBN);
 
             Assert.Equal("Title not found", actual.Title);
         }
@@ -48,7 +48,7 @@ namespace ISBN
             string ISBN = "0321146530";
 
             ISBNFinder sut = new ISBNFinder();
-            BookInfo actual = sut.lookup(ISBN);
+            BookInfo actual = sut.Lookup(ISBN);
 
             BookInfo expected = new BookInfo("Test Driven Development by Example", "Kent Beck", "0321146530",
                 "9780321146533");
