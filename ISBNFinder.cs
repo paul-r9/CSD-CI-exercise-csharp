@@ -12,7 +12,9 @@ namespace ISBN {
             isbnService = bookInfoProvider;
         }
         
-        public BookInfo Lookup(string isbn) {
+        public BookInfo Lookup(string isbn)
+        {
+            isbn = RemoveSpacesAndHyphens(isbn);
             if (isbn.Length == 13)
             {
                 return isbnService.Retrieve(isbn);
@@ -36,6 +38,11 @@ namespace ISBN {
             }
             
             return bookInfo;
+        }
+
+        private string RemoveSpacesAndHyphens(string isbn)
+        {
+            return isbn.Replace("-", "").Replace(" ", "");
         }
 
         private bool HasInvalidCharacters(string isbn)

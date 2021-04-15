@@ -78,6 +78,15 @@ namespace ISBN
 
             Assert.Equal("BDD In Action", actual.Title);
         }
+        
+        [Fact]
+        public void ISBN_Should_Remove_Spaces_And_Hyphens()
+        {
+            string ISBN = "16-17-29-16 5X";
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN);
+            Assert.Equal("BDD In Action", actual.Title);
+        }
 
     }
 }
