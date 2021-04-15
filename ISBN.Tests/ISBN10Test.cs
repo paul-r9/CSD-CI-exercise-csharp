@@ -78,5 +78,16 @@ namespace ISBN
 
             Assert.Equal(invalidISBN, actual.Title);
         }
+
+        [Fact]
+        public void ISBN_With_X_At_End_Should_Return_Valid_BI()
+        {
+            string ISBN = "161729165X";
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN);
+
+            Assert.Equal("BDD In Action", actual.Title);
+        }
+
     }
 }

@@ -36,7 +36,12 @@ namespace ISBN {
 
         private bool HasInvalidCharacters(string isbn)
         {
-            bool isOnlyDigits = int.TryParse(isbn, out _);
+            string isbnToValidate = isbn;
+            if (isbn.EndsWith("x", true, System.Globalization.CultureInfo.CurrentCulture))
+            {
+                isbnToValidate = isbn.Substring(0, isbn.Length - 2);
+            }
+            bool isOnlyDigits = int.TryParse(isbnToValidate, out _);
             return !isOnlyDigits;
         }
     }
