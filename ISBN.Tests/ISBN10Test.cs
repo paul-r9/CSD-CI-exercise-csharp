@@ -64,5 +64,11 @@ namespace ISBN
             // Fix it and commit to trunk and observe the CI build starts and passes
             Assert.True(false, "Remove this test or change 'false' to true'");
         }
+
+        [Fact]
+        public void Failing_Test_Do_A_Commit()
+        {
+            Assert.True(false, "We were able to commit");
+        }
     }
 }
