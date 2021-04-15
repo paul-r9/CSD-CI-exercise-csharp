@@ -56,7 +56,7 @@ namespace ISBN
         }
 
         // [Fact(Skip = "skipping this test should get a Green azure build")]
-        [Fact]
+        [Fact(Skip="Enable this test to see the CI build fail")]
         public void Failing_Test_To_Demo_CI_Automation()
         {
             // This test fails
