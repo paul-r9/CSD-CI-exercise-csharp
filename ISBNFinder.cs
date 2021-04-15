@@ -1,3 +1,4 @@
+using System;
 using BookInfoProvider;
 
 namespace ISBN {
@@ -18,6 +19,12 @@ namespace ISBN {
                 return badIsbn;
             }
 
+            if(HasInvalidCharacters(isbn))
+            {
+                BookInfo invalidIsbn = new BookInfo("Invalid ISBN");
+                return invalidIsbn;
+            }
+
             BookInfo bookInfo = isbnService.Retrieve(isbn);
             
             if (null == bookInfo) {
@@ -25,6 +32,12 @@ namespace ISBN {
             }
             
             return bookInfo;
+        }
+
+        private bool HasInvalidCharacters(string isbn)
+        {
+            bool isOnlyDigits = int.TryParse(isbn, out _);
+            return !isOnlyDigits;
         }
     }
 }

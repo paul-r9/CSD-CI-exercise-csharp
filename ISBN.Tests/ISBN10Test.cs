@@ -6,6 +6,10 @@ namespace ISBN
 {
     public class ISBN10Test
     {
+        private const string ignored = "ignored";
+        private const string titleNotFound = "Title not found";
+        private const string invalidISBN = "Invalid ISBN";
+
         [Fact]
         public void ISBN_ShorterThan10Characters_ReturnsInvalidBookInfo()
         {
@@ -55,8 +59,8 @@ namespace ISBN
             Assert.Equal(expected.ToString(), actual.ToString());
         }
 
-        // [Fact(Skip = "skipping this test should get a Green azure build")]
-        [Fact]
+        [Fact(Skip = "skipping this test should get a Green azure build")]
+        //[Fact]
         // [Fact(Skip="Enable this test to see the CI build fail")]
         public void Failing_Test_To_Demo_CI_Automation()
         {
@@ -65,10 +69,14 @@ namespace ISBN
             Assert.True(false, "Remove this test or change 'false' to true'");
         }
 
-        [Fact(Skip="Skipping are test just to do a check")]
-        public void Failing_Test_Do_A_Commit()
+        [Fact]
+        public void ISBN_Invalid_Characters_Should_Return_Invalid_BI()
         {
-            Assert.True(false, "We were able to commit");
+            string ISBN = "123456789A";
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN);
+
+            Assert.Equal(invalidISBN, actual.Title);
         }
     }
 }
