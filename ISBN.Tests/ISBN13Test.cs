@@ -1,17 +1,21 @@
+using BookInfoProvider;
 using Xunit;
 
 namespace ISBN
 {
     public class ISBN13Test
     {
-        //[Fact]
-        //[Fact]
-         [Fact(Skip="Enable this test to see the CI build fail")]
-        public void Failing_Test_To_Demo_CI_Automation()
+        [Fact]
+        public void ISBN13_BookFound()
         {
-            // This test fails
-            // Fix it and commit to trunk and observe the CI build starts and passes
-            Assert.True(false, "Remove this test or change 'false' to true'");
+            string ISBN13 = "9780321146533";
+
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN13);
+
+            BookInfo expected = new BookInfo("Test Driven Development by Example", "Kent Beck", "0321146530",
+                "9780321146533");
+            Assert.Equal(expected.ToString(), actual.ToString());
         }
     }
 }

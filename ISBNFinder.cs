@@ -13,6 +13,10 @@ namespace ISBN {
         }
         
         public BookInfo Lookup(string isbn) {
+            if (isbn.Length == 13)
+            {
+                return isbnService.Retrieve(isbn);
+            }
             
             if (isbn.Length != 10) {
                 BookInfo badIsbn = new BookInfo("ISBN must be 10 characters in length");
