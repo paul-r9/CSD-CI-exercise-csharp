@@ -4,9 +4,9 @@ namespace ISBN
 {
     public class ISBN13Test
     {
-        [Fact]
         //[Fact]
-        // [Fact(Skip="Enable this test to see the CI build fail")]
+        //[Fact]
+         [Fact(Skip="Enable this test to see the CI build fail")]
         public void Failing_Test_To_Demo_CI_Automation()
         {
             // This test fails
