@@ -6,6 +6,10 @@ namespace ISBN
 {
     public class ISBN10Test
     {
+        private const string ignored = "ignored";
+        private const string titleNotFound = "Title not found";
+        private const string invalidISBN = "Invalid ISBN";
+
         [Fact]
         public void ISBN_ShorterThan10Characters_ReturnsInvalidBookInfo()
         {
@@ -58,9 +62,31 @@ namespace ISBN
         [Fact(Skip="Enable this test to see the CI build fail")]
         public void Failing_Test_To_Demo_CI_Automation()
         {
-            // This test fails
-            // Fix it and commit to trunk and observe the CI build starts and passes
-            Assert.True(false, "Remove this test or change 'false' to true'");
+            string ISBN = "123456789A";
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN);
+
+            Assert.Equal(invalidISBN, actual.Title);
         }
+
+        [Fact]
+        public void ISBN_With_X_At_End_Should_Return_Valid_BI()
+        {
+            string ISBN = "161729165X";
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN);
+
+            Assert.Equal("BDD In Action", actual.Title);
+        }
+        
+        [Fact]
+        public void ISBN_Should_Remove_Spaces_And_Hyphens()
+        {
+            string ISBN = "16-17-29-16 5X";
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(ISBN);
+            Assert.Equal("BDD In Action", actual.Title);
+        }
+
     }
 }
