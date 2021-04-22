@@ -7,19 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="BookInfoProvider\**" />
       <Compile Remove="ISBN.Tests\**" />
-      <Compile Remove="BookInfoProvider\obj\Debug\netcoreapp2.1\**" />
-      <Compile Remove="BookInfoProvider\obj\Debug\netcoreapp3.1\BookInfoProvider.Program.cs" />
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Remove="BookInfoProvider\**" />
       <EmbeddedResource Remove="ISBN.Tests\**" />
-      <EmbeddedResource Remove="BookInfoProvider\obj\Debug\netcoreapp2.1\**" />
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="BookInfoProvider\**" />
       <None Remove="ISBN.Tests\**" />
-      <None Remove="BookInfoProvider\obj\Debug\netcoreapp2.1\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -33,6 +32,10 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="BookInfoProvider\BookInfoProvider.csproj" />
     </ItemGroup>
 
 </Project>
