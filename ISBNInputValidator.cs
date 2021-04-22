@@ -4,7 +4,18 @@ using System.Text;
 
 namespace ISBN
 {
-    internal class ISBNInputValidator
+    public static class ISBNInputValidator
     {
+        public static string Filter(string input)
+        {
+            List<char> charsToRemove = new List<char>() { '@', '_', ',', '.', '-', '%', '#', '!', '*', '&', '$' };
+
+            foreach (char c in charsToRemove)
+            {
+                input = input.Replace(c.ToString(), String.Empty);
+            }
+
+            return input.Trim();
+        }
     }
 }
