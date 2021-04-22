@@ -19,3 +19,4 @@ obj/
 #JetBrains / ReSharper / Rider
 *.[Rr]ider
 *.DotSettings.user
+*.user
