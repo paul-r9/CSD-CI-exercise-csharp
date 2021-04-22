@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,16 +9,19 @@
     <ItemGroup>
       <Compile Remove="BookInfoProvider\**" />
       <Compile Remove="ISBN.Tests\**" />
+      <Compile Remove="_NCrunch_ISBN\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="BookInfoProvider\**" />
       <EmbeddedResource Remove="ISBN.Tests\**" />
+      <EmbeddedResource Remove="_NCrunch_ISBN\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="BookInfoProvider\**" />
       <None Remove="ISBN.Tests\**" />
+      <None Remove="_NCrunch_ISBN\**" />
     </ItemGroup>
 
     <ItemGroup>
