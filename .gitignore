@@ -20,3 +20,4 @@ obj/
 *.[Rr]ider
 *.DotSettings.user
 *.user
+*.ncrunchsolution
