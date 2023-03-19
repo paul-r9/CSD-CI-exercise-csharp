@@ -55,7 +55,7 @@ namespace ISBN
             Assert.Equal(expected.ToString(), actual.ToString());
         }
 
-        // [Fact(Skip = "skipping this test should get a Green azure build")]
+        //[Fact(Skip = "skipping this test should get a Green azure build")]
         [Fact]
         public void Failing_Test_To_Demo_CI_Automation()
         {
