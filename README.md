@@ -23,9 +23,20 @@
   
  **TODO** 
   
-  - [ ] Fix the failing test
+  - [x] Fix the failing test
+
+**Breakout 2**
   - [ ] Improve the ISBN10Tests
+  -  [ ] Validate ISBN10 checksum before lookup
+
+**Breakout 1**
   - [ ] Create an ISBN13Test file
+  - [ ] Deal with hyphens
+  - [ ] Deal with spaces
+  - [ ] Ensure exactly 13 digits
+  - [ ] Lookup a valid 13 digit code and return BookInfo
+  - [ ] Return Null Object for invalid ISBN
+  - [ ] Validate the checksum is correct before lookup
   
    
 - [ ] Add code coverage metrics to CI build
