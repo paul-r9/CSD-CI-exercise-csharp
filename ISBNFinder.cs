@@ -14,7 +14,7 @@ namespace ISBN {
         public BookInfo Lookup(string isbn) {
 
             // remove hyphens & spaces
-            var cleanedISBN = isbn.Replace("-", string.Empty);
+            var cleanedISBN = isbn.Replace("-", string.Empty).Replace(" ", string.Empty);
 
             // guard clauses
             // if it's 10 digits
