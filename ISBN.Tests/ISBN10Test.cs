@@ -32,8 +32,9 @@ namespace ISBN
         }
 
         [Fact]
-        public void ISBN_BookAvailableFromFinder()
+        public void ISBN_BookNotAvailableFromFinder()
         {
+            // TODO: test may fail when cksun is actually calculated
             String unknownISBN = "0553562614";
 
             ISBNFinder sut = new ISBNFinder();
