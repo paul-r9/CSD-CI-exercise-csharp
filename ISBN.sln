@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISBN", "ISBN.csproj", "{CE38C4F8-8011-4C4D-A0CA-0EF193DDE0E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISBN.Tests", "ISBN.Tests\ISBN.Tests.csproj", "{830FB591-C9BE-4C7C-8BF0-78CE07A5107C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISBN.Tests", "ISBN.Tests\ISBN.Tests.csproj", "{830FB591-C9BE-4C7C-8BF0-78CE07A5107C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookInfoProvider", "BookInfoProvider\BookInfoProvider.csproj", "{5C76825D-C3FF-4C8A-A61B-4C228DF0168B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookInfoProvider", "BookInfoProvider\BookInfoProvider.csproj", "{5C76825D-C3FF-4C8A-A61B-4C228DF0168B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
