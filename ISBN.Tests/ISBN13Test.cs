@@ -24,5 +24,20 @@ namespace ISBN
             //Assert
             Assert.Equal("xUnit Test Patterns", actual.Title);
         } 
+        
+        
+        [Fact]
+        public void ISBN_12_ReturnsValidBookInfo()
+        {
+            //Arrange
+            string isbnWith12 = "123456789012";
+
+            //Act
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(isbnWith12);
+
+            //Assert
+            Assert.Equal("ISBN must be 10 or 13 characters in length", actual.Title);
+        }
     }
 }
