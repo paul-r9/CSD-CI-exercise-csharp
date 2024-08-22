@@ -1,4 +1,5 @@
 using BookInfoProvider;
+using System;
 
 namespace ISBN {
     public class ISBNFinder {
@@ -11,10 +12,14 @@ namespace ISBN {
             isbnService = bookInfoProvider;
         }
         
+        
+
         public BookInfo Lookup(string isbn) {
-            
-            if (isbn.Length != 10) {
-                BookInfo badIsbn = new BookInfo("ISBN must be 10 characters in length");
+
+            isbn = ReturnCleanupISBN(isbn);
+
+            if (isbn.Length != 10 && isbn.Length != 13) {
+                BookInfo badIsbn = new BookInfo("ISBN must be 10 or 13 characters in length");
                 return badIsbn;
             }
 
@@ -25,6 +30,11 @@ namespace ISBN {
             }
             
             return bookInfo;
+        }
+
+        private string ReturnCleanupISBN(string isbn)
+        {
+            return isbn.Replace(" ", "");
         }
     }
 }
