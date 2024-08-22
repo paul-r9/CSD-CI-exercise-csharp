@@ -10,18 +10,19 @@ namespace ISBN
 {
     public class ISBN13Test
     {
-        [Fact]
-        public void ISBN_WithSpaces_ReturnsValidBookInfo()
+        [Theory]
+        [InlineData("978 0 131 49505 0")]
+        [InlineData("978-0-131-49505-0")]
+        public void ISBN_WithSpaces_ReturnsValidBookInfo(string ISBNWithSpaces)
         {
             //Arrange
-            string ISBNWithSpaces = "978 0 131 49505 0";
-
+            
             //Act
             ISBNFinder sut = new ISBNFinder();
             BookInfo actual = sut.Lookup(ISBNWithSpaces);
 
             //Assert
             Assert.Equal("xUnit Test Patterns", actual.Title);
-        }
+        } 
     }
 }

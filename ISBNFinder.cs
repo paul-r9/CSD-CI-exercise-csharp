@@ -34,7 +34,9 @@ namespace ISBN {
 
         private string ReturnCleanupISBN(string isbn)
         {
-            return isbn.Replace(" ", "");
+            return isbn
+                .Replace(" ", "")
+                .Replace("-", "");
         }
     }
 }
