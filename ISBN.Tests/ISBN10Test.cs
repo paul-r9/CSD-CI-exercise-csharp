@@ -21,6 +21,20 @@ namespace ISBN
         }
 
         [Fact]
+        public void ISBN_12_ReturnsValidBookInfo()
+        {
+            //Arrange
+            string shortISBN = "123456789012";
+
+            //Act
+            ISBNFinder sut = new ISBNFinder();
+            BookInfo actual = sut.Lookup(shortISBN);
+
+            //Assert
+            Assert.Equal("ISBN must be 10 or 13 characters in length", actual.Title);
+        }
+        
+        [Fact]
         public void ISBN_LongerThan10Characters_ReturnsInvalidBookInfo()
         {
             string longISBN = "123456789ABCEDF";
