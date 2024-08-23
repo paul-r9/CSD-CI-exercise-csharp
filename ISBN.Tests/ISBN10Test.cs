@@ -17,23 +17,9 @@ namespace ISBN
             BookInfo actual = sut.Lookup(shortISBN);
 
             //Assert
-            Assert.Equal("ISBN must be 10 or 13 characters in length", actual.Title);
+            Assert.Equal("ISBN must be 10 characters in length", actual.Title);
         }
 
-        [Fact]
-        public void ISBN_12_ReturnsValidBookInfo()
-        {
-            //Arrange
-            string shortISBN = "123456789012";
-
-            //Act
-            ISBNFinder sut = new ISBNFinder();
-            BookInfo actual = sut.Lookup(shortISBN);
-
-            //Assert
-            Assert.Equal("ISBN must be 10 or 13 characters in length", actual.Title);
-        }
-        
         [Fact]
         public void ISBN_LongerThan10Characters_ReturnsInvalidBookInfo()
         {
@@ -42,7 +28,7 @@ namespace ISBN
             ISBNFinder sut = new ISBNFinder();
             BookInfo actual = sut.Lookup(longISBN);
 
-            Assert.Equal("ISBN must be 10 or 13 characters in length", actual.Title);
+            Assert.Equal("ISBN must be 10 characters in length", actual.Title);
         }
 
         [Fact]
@@ -75,7 +61,7 @@ namespace ISBN
         {
             // This test fails
             // Fix it and commit to trunk and observe the CI build starts and passes
-            Assert.True(true, "Remove this test or change 'false' to true'");
+            Assert.True(false, "Remove this test or change 'false' to true'");
         }
     }
 }
